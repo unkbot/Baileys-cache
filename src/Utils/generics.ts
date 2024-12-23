@@ -202,8 +202,6 @@ export const generateMessageIDV2 = (userId?: string): string => {
 	return '3EB0' + hash.toString('hex').toUpperCase().substring(0, 18)
 }
 
-// generate a random ID to attach to a message
-export const generateMessageID = () => '3EB0' + randomBytes(18).toString('hex').toUpperCase()
 
 export function bindWaitForEvent<T extends keyof BaileysEventMap>(ev: BaileysEventEmitter, event: T) {
 	return async(check: (u: BaileysEventMap[T]) => boolean | undefined, timeoutMs?: number) => {
